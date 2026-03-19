@@ -9,7 +9,7 @@ try:
     api_key = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=api_key)
     
-    # OTOMATİK MODEL BULUCU: Çalışan ilk modeli kendi bulur
+    # OTOMATİK MODEL BULUCU
     valid_models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
     
     if not valid_models:
@@ -25,8 +25,8 @@ except Exception as e:
 st.title("🚀 AI Sosyal Medya İçerik Fabrikası")
 st.markdown("Konunu yaz, saniyeler içinde benzersiz ve profesyonel içeriklere dönüşsün.")
 
-# Kullanıcı Girişi
-user_topic = st.text_input("Hangi konuda içerik üretilsin?", placeholder="Örn: Kurtlar Vadisi raconları ve iş dünyası")
+# Kullanıcı Girişi - VİTRİN DÜZELTİLDİ
+user_topic = st.text_input("Hangi konuda içerik üretilsin?", placeholder="Örn: Yapay zekanın dijital pazarlama ve e-ticaret üzerindeki etkisi")
 platform = st.selectbox("Platform Seçiniz", ["LinkedIn", "Instagram", "Twitter (X)"])
 
 if st.button("İçeriği Oluştur"):
