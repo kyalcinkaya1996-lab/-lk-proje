@@ -25,7 +25,7 @@ except Exception as e:
 st.title("🚀 AI Social Media Content Factory")
 st.markdown("Enter your topic, and let AI generate unique, professional content in seconds.")
 
-# Kullanıcı Girişi - GLOBAL VİTRİN
+# Kullanıcı Girişi
 user_topic = st.text_input("What is the topic of your post?", placeholder="e.g., The impact of AI on digital marketing and e-commerce")
 platform = st.selectbox("Select Platform", ["LinkedIn", "Instagram", "Twitter (X)"])
 
@@ -33,8 +33,8 @@ if st.button("Generate Content"):
     if user_topic:
         with st.spinner("AI is thinking and writing for you..."):
             try:
-                # Yapay Zekaya Verilen Gizli İNGİLİZCE Talimat
-                prompt = f"You are a professional social media manager. Write a highly engaging, attention-grabbing, and viral-worthy {platform} post about this topic: '{user_topic}'. Only provide the post content and relevant hashtags. Write the content in English."
+                # DİLİ OTOMATİK ALGILAYAN YENİ GİZLİ TALİMAT
+                prompt = f"You are a professional social media manager. Write a highly engaging, attention-grabbing, and viral-worthy {platform} post about this topic: '{user_topic}'. Only provide the post content and relevant hashtags. IMPORTANT: Automatically detect the language of the topic '{user_topic}' and write the final post entirely in that EXACT same language."
                 
                 # Gemini'den cevap al
                 response = model.generate_content(prompt)
