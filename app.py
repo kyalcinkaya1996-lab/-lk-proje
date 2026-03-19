@@ -8,7 +8,8 @@ st.set_page_config(page_title="AI İçerik Fabrikası", page_icon="🚀")
 try:
     api_key = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    # HATA BURADA DÜZELTİLDİ: Model adı 'gemini-pro' yapıldı
+    model = genai.GenerativeModel('gemini-pro')
 except Exception as e:
     st.error("Kasa şifresi (API Key) bulunamadı! Lütfen Streamlit ayarlarını kontrol et.")
     st.stop()
